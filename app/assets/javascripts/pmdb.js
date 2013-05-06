@@ -5,7 +5,11 @@ window.PM = {
   Routers: {},
 
   initialize: function (rootEl, movies) {
-    console.log("JS client running!");
-    console.log(movies);
+
+    var moviesListView = new PM.Views.MoviesListView({
+      collection: movies
+    });
+
+    $(rootEl).html(moviesListView.render().$el);
   }
-}
+};
