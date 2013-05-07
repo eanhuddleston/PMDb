@@ -1,9 +1,13 @@
+<div id="main"></div>
+<div id="infobar"></div>
+
 <script type="text/javascript">
   $(function () {
     var movies = <%= Movie.all.to_json.html_safe %>;
 
     window.PM.initialize(
-      $('body')[0],
+      $('#main'),
+      $('#infobar'),
       movies
     );
   });

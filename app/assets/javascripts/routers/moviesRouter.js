@@ -1,6 +1,7 @@
 PM.Routers.MoviesRouter = Backbone.Router.extend({
-  initialize: function (rootEl, movies) {
-    this.$rootEl = $(rootEl);
+  initialize: function ($main, $infobar, movies) {
+    this.$main = $main;
+    this.$infobar = $infobar;
     this.movies = movies;
   },
 
@@ -13,13 +14,13 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
     var that = this;
 
     var moviesListView = new PM.Views.MoviesListView({
-      collection: that.tasks
+      collection: that.movies
     });
 
-    that.$rootEl.html(moviesListView.render().$el);
+    that.$main.html(moviesListView.render().$el);
   },
 
   show: function (id) {
-    console.log("m just getting warmed up!");
+    console.log("I'm just getting warmed up!");
   }
 });

@@ -1,0 +1,13 @@
+<!-- app/assets/templates/movies/list.jst.ejs -->
+<ul>
+  <% movies.each(function (movie) { %>
+    <li class="movie" data-id="<%= movie.escape("id") %>">
+      <%= movie.escape("title") %>
+    </li>
+  <% }); %>
+</ul>
+<ul class="login_text">
+  Log in
+</ul>
+
+

@@ -7,7 +7,7 @@ PM.Views.MoviesListView = Backbone.View.extend({
   render: function () {
     var that = this;
 
-    var renderedContent = JST["movies/list"]({
+    var renderedContent = JST["movies/index"]({
       movies: that.collection
     });
 
@@ -17,9 +17,8 @@ PM.Views.MoviesListView = Backbone.View.extend({
 
   showMovie: function (el) {
     console.log(
-      "you clicked movie #" +
-      $(el.target).attr("data-id") +
-      "! So good a click!"
+      "show infobar for movie #" +
+      $(el.target).attr("data-id")
     );
   },
 

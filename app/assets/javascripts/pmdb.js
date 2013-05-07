@@ -4,12 +4,10 @@ window.PM = {
   Views: {},
   Routers: {},
 
-  initialize: function (rootEl, movies) {
+  initialize: function ($main, $infobar, moviesData) {
+    var movies = new PM.Collections.Movies(moviesData);
 
-    var moviesListView = new PM.Views.MoviesListView({
-      collection: movies
-    });
-
-    $(rootEl).html(moviesListView.render().$el);
+    new PM.Routers.MoviesRouter($main, $infobar, movies);
+    Backbone.history.start();
   }
 };
