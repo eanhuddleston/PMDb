@@ -14,19 +14,29 @@ PM.Views.MoviesListView = Backbone.View.extend({
     that.$el.html(renderedContent);
 
     that.collection.each(function(movie) {
-      var renderedContent = JST["movies/info"]({
-        movie: movie
+      var infobarView = new PM.Views.InfobarView({
+        model: movie
       });
 
-      that.$el.append(renderedContent);
+      that.$el.append(infobarView.render().$el);
     });
 
     return that;
   },
 
   showInfobar: function (el) {
-    var movieIdStr = $(el.target).attr("data-id").toString();
-    $("#info-" + movieIdStr).slideToggle();
+    var okToSlide = true;
+
+    $('.infobar').each(function(i, obj) {
+      if ($(obj).is(":visible")) {
+        okToSlide = false;
+      }
+    });
+
+    if(okToSlide) {
+      var movieIdStr = $(el.target).attr("data-id").toString();
+      $("#info-" + movieIdStr).slideToggle();
+    }
   },
 
   loginModal: function () {

@@ -1,6 +1,6 @@
-PM.Views.infobarView = Backbone.View.extend({
+PM.Views.InfobarView = Backbone.View.extend({
   events: {
-
+    "click .closeMe": "closeInfobar"
   },
 
   render: function () {
@@ -14,7 +14,9 @@ PM.Views.infobarView = Backbone.View.extend({
     return that;
   },
 
-  showMovie: function (el) {
-
+  closeInfobar: function (el) {
+    barNum = $(el.target).attr("data-id").toString();
+    console.log(barNum);
+    $("#info-" + barNum).slideToggle();
   }
 });
