@@ -7,7 +7,7 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    "movies/:id": "show"
+    "movies/new": "new"
   },
 
   index: function () {
@@ -18,9 +18,9 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
     });
 
     that.$main.html(moviesListView.render().$el);
+    $(".infobar").hide();
   },
 
-  show: function (id) {
-    console.log("I'm just getting warmed up!");
+  new: function () {
   }
 });
