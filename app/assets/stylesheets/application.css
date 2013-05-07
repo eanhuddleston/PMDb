@@ -28,9 +28,14 @@
   width: 98.3%;
   height: 450px;
   background-image:url('bar-background.jpg');
-  border: 10px solid;
-  border-radius: 25px;
+  border-left: 10px solid;
+  border-right: 10px solid;
+  border-top: 10px solid;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
+
+/*border-radius: 25px;*/
 
 .closeMe {
   top: 0;
