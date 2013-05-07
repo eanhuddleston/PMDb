@@ -25,9 +25,11 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 98.3%;
   height: 400px;
   background-image:url('bar-background.jpg');
+  border: 10px solid;
+  border-radius: 25px;
 }
 
 .closeMe {
