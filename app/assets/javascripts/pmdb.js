@@ -9,5 +9,6 @@ window.PM = {
 
     new PM.Routers.MoviesRouter($main, $infobar, movies);
     Backbone.history.start();
+    $infobar.hide();
   }
 };

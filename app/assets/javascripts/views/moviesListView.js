@@ -16,6 +16,7 @@ PM.Views.MoviesListView = Backbone.View.extend({
   },
 
   showMovie: function (el) {
+    $("#infobar").slideToggle();
     console.log(
       "show infobar for movie #" +
       $(el.target).attr("data-id")
