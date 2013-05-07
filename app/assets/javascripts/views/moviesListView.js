@@ -1,6 +1,5 @@
 PM.Views.MoviesListView = Backbone.View.extend({
   events: {
-    "click li.movie": "showInfobar",
     "click ul.login_text": "loginModal"
   },
 
@@ -22,21 +21,6 @@ PM.Views.MoviesListView = Backbone.View.extend({
     });
 
     return that;
-  },
-
-  showInfobar: function (el) {
-    var okToSlide = true;
-
-    $('.infobar').each(function(i, obj) {
-      if ($(obj).is(":visible")) {
-        okToSlide = false;
-      }
-    });
-
-    if(okToSlide) {
-      var movieIdStr = $(el.target).attr("data-id").toString();
-      $("#info-" + movieIdStr).slideToggle();
-    }
   },
 
   loginModal: function () {

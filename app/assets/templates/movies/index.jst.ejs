@@ -2,7 +2,7 @@
 <ul>
   <% movies.each(function (movie) { %>
     <li class="movie" data-id="<%= movie.escape("id") %>">
-      <%= movie.escape("title") %>
+      <a href="<%='#bar/' + movie.escape("id") %>"> <%= movie.escape("title") %> </a>
     </li>
   <% }); %>
 </ul>
