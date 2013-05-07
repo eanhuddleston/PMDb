@@ -27,7 +27,7 @@
   left: 0;
   width: 100%;
   height: 400px;
-  background: gray;
+  background-image:url('bar-background.jpg');
 }
 
 .closeMe {
