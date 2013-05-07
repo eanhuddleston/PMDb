@@ -1,7 +1,7 @@
 <!-- app/assets/templates/movies/info.jst.ejs -->
 <div id="info-<%= movie.escape("id") %>" class="infobar">
   <div class="closeMe" data-id=<%= movie.escape("id")%>>
-    <i class="icon-search"></i>
+    <img src="assets/arrow.png">
   </div>
   <div class="trailer">
     <iframe width="560" height="315" src="<%=movie.escape("trailer")%>"" frameborder="0" allowfullscreen></iframe>

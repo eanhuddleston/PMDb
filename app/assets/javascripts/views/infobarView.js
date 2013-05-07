@@ -15,7 +15,7 @@ PM.Views.InfobarView = Backbone.View.extend({
   },
 
   closeInfobar: function (el) {
-    barNum = $(el.target).attr("data-id").toString();
+    barNum = $(el.target).parent().attr("data-id").toString();
     console.log(barNum);
     $("#info-" + barNum).slideToggle();
 
