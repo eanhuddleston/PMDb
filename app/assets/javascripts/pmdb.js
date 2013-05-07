@@ -4,11 +4,11 @@ window.PM = {
   Views: {},
   Routers: {},
 
-  initialize: function ($main, $infobar, moviesData) {
+  initialize: function ($main, moviesData) {
     var movies = new PM.Collections.Movies(moviesData);
 
-    new PM.Routers.MoviesRouter($main, $infobar, movies);
+    new PM.Routers.MoviesRouter($main, movies);
     Backbone.history.start();
-    $infobar.hide();
+    // $infobar.hide();
   }
 };

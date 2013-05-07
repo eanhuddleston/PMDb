@@ -1,7 +1,7 @@
 PM.Routers.MoviesRouter = Backbone.Router.extend({
-  initialize: function ($main, $infobar, movies) {
+  initialize: function ($main, movies) {
     this.$main = $main;
-    this.$infobar = $infobar;
+    // this.$infobar = $infobar;
     this.movies = movies;
   },
 

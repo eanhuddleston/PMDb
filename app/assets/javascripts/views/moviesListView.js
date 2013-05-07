@@ -11,12 +11,17 @@ PM.Views.MoviesListView = Backbone.View.extend({
       movies: that.collection
     });
 
+    that.collection.each(function(movie) {
+      
+      console.log(movie.escape("title"));
+    });
+
     that.$el.html(renderedContent);
     return that;
   },
 
   showMovie: function (el) {
-    $("#infobar").slideToggle();
+    $(".infobar").slideToggle();
     console.log(
       "show infobar for movie #" +
       $(el.target).attr("data-id")
