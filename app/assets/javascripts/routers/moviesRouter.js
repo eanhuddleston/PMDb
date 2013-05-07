@@ -7,6 +7,7 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
 
   routes: {
     "": "index",
+    "barClosed": "closeBar",
     "bar/:id": "showBar",
     "movies/new": "new"
   },
@@ -20,6 +21,11 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
 
     that.$main.html(moviesListView.render().$el);
     $(".infobar").hide();
+  },
+
+  closeBar: function () {
+    var that = this;
+    
   },
 
   showBar: function (id) {
@@ -36,6 +42,7 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
     if(okToSlide) {
       $("#info-" + id).slideToggle();
     }
+
   },
 
   new: function () {
