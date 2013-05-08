@@ -1,11 +1,11 @@
 <!-- app/assets/templates/movies/list.jst.ejs -->
-<ul>
-  <% movies.each(function (movie) { %>
-    <li class="movie" data-id="<%= movie.escape("id") %>">
-      <a href="<%='#bar/' + movie.escape("id") %>"> <%= movie.escape("title") %> </a>
-    </li>
-  <% }); %>
-</ul>
+
+<% movies.each(function (movie) { %>
+  <div class="span3" class="movie" data-id="<%= movie.escape("id") %>">
+    <a href="<%='#bar/' + movie.escape("id") %>"> <%= movie.escape("title") %> </a>
+  </div>
+<% }); %>
+
 
 
 
