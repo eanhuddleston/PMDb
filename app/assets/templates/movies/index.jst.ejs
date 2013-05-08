@@ -2,10 +2,6 @@
 
 <% movies.each(function (movie) { %>
   <div class="span3" class="movie" data-id="<%= movie.escape("id") %>">
-    <a href="<%='#bar/' + movie.escape("id") %>"> <%= movie.escape("title") %> </a>
+    <a href="<%='#bar/' + movie.escape("id") %>"> <img src="<%= movie.escape("poster_url") %>"" </a>
   </div>
 <% }); %>
-
-
-
-

@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   respond_to :json
 
   def create
-    @movie = Movie.new(params[:task])
+    @movie = Movie.new(params[:movie])
 
     if @movie.save
       render :json => @movie
