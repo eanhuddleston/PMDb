@@ -33,8 +33,7 @@ PM.Views.AddMovieView = Backbone.View.extend ({
       },
       dataType: "jsonp",
       success: function(response) {
-        console.log(response);
-        console.log(response.movies[1].title);
+        // console.log(response.movies[1].title);
         window.response = response;
 
         that.movieOptions = new PM.Collections.MovieOptions();
@@ -50,8 +49,14 @@ PM.Views.AddMovieView = Backbone.View.extend ({
           that.movieOptions.add(test);
         });
 
-        console.log(JSON.stringify(that.movieOptions));
+        var movieChoiceView = new PM.Views.MovieChoiceView({
+          collection: that.movieOptions
+        });
 
+        $('.choices').remove();
+        that.$el.append(movieChoiceView.render().$el);
+
+        console.log(JSON.stringify(that.movieOptions));
       }
     });
 

@@ -1,0 +1,7 @@
+<!-- app/assets/templates/movies/choose.jst.ejs -->
+
+<% movies.each(function (movie) { %>
+  <div class="span3" class="movie" data-id="<%= movie.escape("id") %>">
+    <a href="<%='#create' + movie.escape("id") %>"> <img src="<%= movie.escape("poster_url") %>"" </a>
+  </div>
+<% }); %>
