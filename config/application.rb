@@ -62,5 +62,7 @@ module Pmdb
     config.assets.paths << "app/assets/templates"
 
     config.assets.initialize_on_precompile = false
+
+    config.filepicker_rails.api_key = "AuVt2JCKEQIqTAqhvNBukz"
   end
 end
