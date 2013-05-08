@@ -9,7 +9,7 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
     "": "index",
     "barClosed": "closeBar",
     "bar/:id": "showBar",
-    "movies/new": "new"
+    "add": "add"
   },
 
   index: function () {
@@ -23,9 +23,19 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
     $(".infobar").hide();
   },
 
-  closeBar: function () {
+  add: function () {
     var that = this;
-    
+
+    // var new_model = new PM.Models.Movie();
+    var addMovieView = new PM.Views.AddMovieView({
+      // model: new_model
+    });
+
+    that.$main.html(addMovieView.render().$el);
+  },
+
+  closeBar: function () {
+    // Dummy function
   },
 
   showBar: function (id) {
@@ -43,8 +53,5 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
       $("#info-" + id).slideToggle();
     }
 
-  },
-
-  new: function () {
   }
 });
