@@ -36,13 +36,22 @@ PM.Views.AddMovieView = Backbone.View.extend ({
         console.log(response);
         console.log(response.movies[1].title);
         window.response = response;
-        var test = new PM.Models.Movie({
-          title: response.movies[1].title,
-          year: response.movies[1].year,
-          audience_score: response.movies[1].ratings.audience_score,
-          poster_url: response.movies[1].posters.detailed
+
+        that.movieOptions = new PM.Collections.MovieOptions();
+
+        _(response.movies).each (function (movie) {
+          var test = new PM.Models.Movie({
+            title: movie.title,
+            year: movie.year,
+            audience_score: movie.ratings.audience_score,
+            poster_url: movie.posters.detailed
+          });
+
+          that.movieOptions.add(test);
         });
-        
+
+        console.log(JSON.stringify(that.movieOptions));
+
       }
     });
 

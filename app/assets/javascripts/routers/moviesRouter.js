@@ -3,6 +3,7 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
     this.$main = $main;
     // this.$infobar = $infobar;
     this.movies = movies;
+    // this.movieOptions = new PM.Collections.MovieOptions();
   },
 
   routes: {
