@@ -1,6 +1,6 @@
 PM.Views.MovieChoiceView = Backbone.View.extend({
   events: {
-    "click div.movie": "chooseMovie"
+    "click img.poster": "chooseMovie"
   },
 
   render: function () {
@@ -16,7 +16,13 @@ PM.Views.MovieChoiceView = Backbone.View.extend({
     return that;
   },
 
-  chooseMovie: function () {
+  chooseMovie: function (el) {
     var that = this;
+
+    console.log($(el.target).attr('data-cid'));
+    var cid = $(el.target).attr('data-cid');
+    var movie = that.collection.get(cid);
+
+    
   }
 });

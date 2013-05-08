@@ -37,6 +37,7 @@ PM.Views.AddMovieView = Backbone.View.extend ({
         window.response = response;
 
         that.movieOptions = new PM.Collections.MovieOptions();
+        window.coll = that.movieOptions;
 
         _(response.movies).each (function (movie) {
           var test = new PM.Models.Movie({
@@ -59,7 +60,6 @@ PM.Views.AddMovieView = Backbone.View.extend ({
         console.log(JSON.stringify(that.movieOptions));
       }
     });
-
   }, 
 
   process: function (data) {
