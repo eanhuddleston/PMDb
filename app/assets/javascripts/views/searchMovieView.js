@@ -16,11 +16,6 @@ PM.Views.SearchMovieView = Backbone.View.extend ({
 
   search: function () {
     var that = this;
-
-    // var url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=oblivion&apikey=47g5x5cc7h5mf694cygt3jgd";
-    // $.getJSON(url, function(response) {
-    //   console.log(response);
-    // });
     
     var movie_title = $('input').val();
 
@@ -44,7 +39,8 @@ PM.Views.SearchMovieView = Backbone.View.extend ({
             title: movie.title,
             year: movie.year,
             audience_score: movie.ratings.audience_score,
-            poster_url: movie.posters.detailed
+            poster_url: movie.posters.detailed,
+            critics_score: movie.ratings.critics_score
           });
 
           that.movieOptions.add(test);
