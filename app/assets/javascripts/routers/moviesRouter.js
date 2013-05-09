@@ -10,14 +10,15 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
     "": "index",
     "barClosed": "closeBar",
     "bar/:id": "showBar",
-    "add": "add"
+    "add": "add",
+    "addMovie": "addMovie"
   },
 
   index: function () {
     var that = this;
 
     var moviesListView = new PM.Views.MoviesListView({
-      collection: that.movies
+      collection: PM.Store.movies
     });
 
     that.$main.html(moviesListView.render().$el);
@@ -27,9 +28,18 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
   add: function () {
     var that = this;
 
-    // var new_model = new PM.Models.Movie();
+    var searchMovieView = new PM.Views.SearchMovieView({
+    });
+
+    that.$main.html(searchMovieView.render().$el);
+  },
+
+  addMovie: function () {
+    var that = this;
+    console.log("got to addMovie in router");
+
     var addMovieView = new PM.Views.AddMovieView({
-      // model: new_model
+      model: PM.Store.movieToAdd
     });
 
     that.$main.html(addMovieView.render().$el);

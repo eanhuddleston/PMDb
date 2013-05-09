@@ -51,6 +51,10 @@
   left: 30px;
 }
 
+#searchMovieForm {
+  margin-left: 100px;
+}
+
 #addMovieForm {
   margin-left: 100px;
 }

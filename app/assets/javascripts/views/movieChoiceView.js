@@ -23,6 +23,8 @@ PM.Views.MovieChoiceView = Backbone.View.extend({
     var cid = $(el.target).attr('data-cid');
     var movie = that.collection.get(cid);
 
-    
+    PM.Store.movieToAdd = movie;
+
+    Backbone.history.navigate("#addMovie", {trigger: true});
   }
 });

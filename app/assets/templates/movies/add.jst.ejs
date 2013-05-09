@@ -1,9 +1,9 @@
 <!-- app/assets/templates/movies/add.jst.ejs -->
 <div id="addMovieForm">
-  <h1>Add Movie:</h1>
-  <input name="movieTitle">
-  <button class="submit">Submit</button>
+  <h1><%= movie.escape("title") %></h1>
+  <br>
+  <h3>Youtube trailer:</h3>
+  <input name="trailer">
+  <br>
+  <button class="save">Save Movie</button>
 </div>
-
-
-
