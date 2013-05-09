@@ -6,4 +6,17 @@
   <div class="trailer">
     <iframe width="560" height="315" src="<%=movie.escape("trailer")%>"" frameborder="0" allowfullscreen></iframe>
   </div>
+  <div class="movieDetails">
+    <ul>
+      <li>
+        <h2><%= movie.escape("title") %></h2> (<%= movie.escape("year") %>)
+      </li>
+      <li>
+        <h3>
+          Audience Score:
+          <%= movie.escape("audience_score") %>
+        </h3>
+      </li>
+    </ul>
+  </div>
 </div>
