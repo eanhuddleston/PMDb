@@ -47,7 +47,7 @@
 
 .trailer {
   position: absolute;
-  top: 100px;
+  top: 90px;
   left: 30px;
 }
 
@@ -83,7 +83,7 @@
   right: 50px;
   line-height: 200px;
   color: gray;
-  width: 450px;
+  width: 400px;
 }
 
 .delete {
