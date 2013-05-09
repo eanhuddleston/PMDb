@@ -10,10 +10,11 @@
     <ul>
       <li>
         <h2>
-          <%= movie.escape("title") %>
-          <small>
-            (<%= movie.escape("year") %>)
-          </small>
+          <span class="details"><%= movie.escape("title") %>
+            <small>
+              <span class="details">(<%= movie.escape("year") %>)</span>
+            </small>
+          </span>
         </h2>
       </li>
       <li>

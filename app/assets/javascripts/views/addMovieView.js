@@ -16,10 +16,7 @@ PM.Views.AddMovieView = Backbone.View.extend({
     $(renderedContent).find("button.save").on("click", function() {
       var that = this;
 
-      console.log("hello?");
-
       var trailer = $('input').val();
-      console.log(trailer);
     });
 
     that.$el.html(renderedContent);
@@ -35,8 +32,12 @@ PM.Views.AddMovieView = Backbone.View.extend({
 
     that.model.set("trailer", trailer);
     that.model.save();
-    PM.Store.movies.add(that.model);
-
-    Backbone.history.navigate("/", {trigger: true});
+    that.model.fetch({
+      success: function(model) {
+        console.log(model);
+        PM.Store.movies.add(model);
+        Backbone.history.navigate("/", {trigger: true});
+      }
+    });
   }
 });
