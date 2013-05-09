@@ -25,7 +25,7 @@ PM.Views.MovieChoiceView = Backbone.View.extend({
 
     PM.Store.movieToAdd = that.movie;
 
-    that.searchStr = that.movie.escape("title") + "+trailer+" + that.movie.escape("year");
+    that.searchStr = that.movie.attributes.title + "+trailer+" + that.movie.escape("year");
     console.log(that.searchStr);
 
     $.ajax({
