@@ -21,10 +21,35 @@ PM.Views.MovieChoiceView = Backbone.View.extend({
 
     console.log($(el.target).attr('data-cid'));
     var cid = $(el.target).attr('data-cid');
-    var movie = that.collection.get(cid);
+    that.movie = that.collection.get(cid);
 
-    PM.Store.movieToAdd = movie;
+    PM.Store.movieToAdd = that.movie;
 
-    Backbone.history.navigate("#addMovie", {trigger: true});
+    that.searchStr = that.movie.escape("title") + "+trailer+" + that.movie.escape("year");
+    console.log(that.searchStr);
+
+    $.ajax({
+      type: "GET",
+      url: "https://gdata.youtube.com/feeds/api/videos",
+      data: {
+        q: that.searchStr,
+        "max-results": 5,
+        v: 2,
+        alt: "json"
+      },
+      dataType: "jsonp",
+      success: function(response) {
+        console.log("hello");
+        window.result = response;
+        that.response = response;
+        // console.log(response);
+        PM.Store.trailers = [];
+        _(that.response.feed.entry).each (function (entry) {
+          PM.Store.trailers.push("http://www.youtube.com/embed/" + entry.link[0].href.substring(32,43));
+        });
+
+        Backbone.history.navigate("#addMovie", {trigger: true});
+      }    
+    });
   }
 });

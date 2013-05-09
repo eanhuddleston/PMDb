@@ -57,7 +57,7 @@ PM.Views.SearchMovieView = Backbone.View.extend ({
         $('.choices').remove();
         that.$el.append(movieChoiceView.render().$el);
 
-        console.log(JSON.stringify(that.movieOptions));
+        //console.log(JSON.stringify(that.movieOptions));
       }
     });
   }, 

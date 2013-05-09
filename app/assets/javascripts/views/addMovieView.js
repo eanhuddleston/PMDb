@@ -7,7 +7,8 @@ PM.Views.AddMovieView = Backbone.View.extend({
     var that = this;
 
     var renderedContent = JST["movies/add"]({
-      movie: that.model
+      movie: that.model,
+      trailers: PM.Store.trailers
     });
 
     console.log($(renderedContent).find("button.save"));
@@ -25,11 +26,13 @@ PM.Views.AddMovieView = Backbone.View.extend({
     return that;
   },
 
-  saveMovie: function () {
+  saveMovie: function (el) {
     var that = this;
 
-    var trailer = $('input').val();
+    var trailerNum = el.target.parentElement.getAttribute("data-trailer");
+    var trailer = PM.Store.trailers[trailerNum];
     console.log(trailer);
+
     that.model.set("trailer", trailer);
     that.model.save();
     PM.Store.movies.add(that.model);
