@@ -9,13 +9,36 @@
   <div class="movieDetails">
     <ul>
       <li>
-        <h2><%= movie.escape("title") %></h2> (<%= movie.escape("year") %>)
+        <h2>
+          <%= movie.escape("title") %>
+          <small>
+            (<%= movie.escape("year") %>)
+          </small>
+        </h2>
+      </li>
+      <li>
+        <h3>
+          Runtime:
+          <%= movie.escape("runtime") %>
+        </h3>
       </li>
       <li>
         <h3>
           Audience Score:
           <%= movie.escape("audience_score") %>
         </h3>
+      </li>
+      <li>
+        <h3>
+          Critics Score:
+          <%= movie.escape("critics_score") %>
+        </h3>
+      </li>
+      <li>
+        <h4>
+          Critic's Consensus:
+          <%= movie.escape("critics_consensus") %>
+        </h4>
       </li>
     </ul>
   </div>

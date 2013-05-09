@@ -35,12 +35,21 @@ PM.Views.SearchMovieView = Backbone.View.extend ({
         window.coll = that.movieOptions;
 
         _(response.movies).each (function (movie) {
+          // console.log(movie.abridged_cast[0].name);
+          var cast = "";
+          _(movie.abridged_cast).each (function (member) {
+            cast = cast + ", " + member.name;
+          });
+          cast = cast.substring(2,cast.length);
           var test = new PM.Models.Movie({
             title: movie.title,
             year: movie.year,
             audience_score: movie.ratings.audience_score,
             poster_url: movie.posters.detailed,
-            critics_score: movie.ratings.critics_score
+            critics_score: movie.ratings.critics_score,
+            cast: cast,
+            runtime: movie.runtime,
+            critics_consensus: movie.critics_consensus
           });
 
           that.movieOptions.add(test);
