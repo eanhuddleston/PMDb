@@ -41,9 +41,15 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
     var addMovieView = new PM.Views.AddMovieView({
       model: PM.Store.movieToAdd
     });
-
+    // this.swap(addMovieView);
     that.$main.html(addMovieView.render().$el);
   },
+
+  // swap: function (newView) {
+  //   this.currentView.remove();
+  //   this.currentView = newView;
+  //   this.$main.html(newView.render().$el);
+  // },
 
   closeBar: function () {
     // Dummy function

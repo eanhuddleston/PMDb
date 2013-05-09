@@ -4,6 +4,10 @@ PM.Views.MoviesListView = Backbone.View.extend({
     "click button.delete": "deleteMovie"
   },
 
+  // initialize: function () {
+  //   this.listenTo(this.collection, 'remove', this.removeMovie);
+  // },
+
   render: function () {
     var that = this;
 
@@ -30,11 +34,13 @@ PM.Views.MoviesListView = Backbone.View.extend({
     var movie_id = el.target.parentElement.getAttribute("data-id");
     that.movie = that.collection.get(movie_id);
     console.log(that.movie);
+    that.collection.remove(that.movie);
     that.movie.destroy();
-  },
-
-  loginModal: function () {
-    var that = this;
-    console.log("do some login junk");
+    $(el.target.parentElement).remove();
   }
+
+  // removeMovie: function () {
+  //   var that = this;
+  //   console.log("got into removeMovie");
+  // }
 });
