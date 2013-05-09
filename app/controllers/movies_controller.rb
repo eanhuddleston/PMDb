@@ -18,5 +18,12 @@ class MoviesController < ApplicationController
       format.json { render :json => @movies }
     end
   end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+
+    redirect_to root_url
+  end
 end
 
