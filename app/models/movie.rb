@@ -1,6 +1,7 @@
 class Movie < ActiveRecord::Base
   attr_accessible :audience_score, :title, :year, :poster_url, 
-      :trailer, :critics_score, :cast, :runtime, :critics_consensus
+      :trailer, :critics_score, :cast, :runtime, :critics_consensus, 
+      :location
 
   validates :audience_score, :title, :year, :poster_url, 
       :presence => true

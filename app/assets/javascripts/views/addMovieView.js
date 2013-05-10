@@ -26,6 +26,9 @@ PM.Views.AddMovieView = Backbone.View.extend({
   saveMovie: function (el) {
     var that = this;
 
+    var movieLocation = $('input').val();
+    that.model.set("location", movieLocation);
+
     var trailerNum = el.target.parentElement.getAttribute("data-trailer");
     var trailer = PM.Store.trailers[trailerNum];
     console.log(trailer);

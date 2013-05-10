@@ -1,6 +1,13 @@
 <!-- app/assets/templates/movies/add.jst.ejs -->
 
 <h1 class="addMovieTitle"><%= movie.escape("title") %></h1>
+<div class="span9 movieLocation">
+  <h3>
+    Movie Location: <input name="movieLocation">
+  </h3>
+</div>
+<br>
+<br>
 <br>
 <% _(trailers).each (function (trailer, i) { %>
   <div class="span9 addMovieForm" style="text-align:center" data-trailer=<%= i %>> 
