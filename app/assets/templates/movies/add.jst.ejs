@@ -1,9 +1,9 @@
 <!-- app/assets/templates/movies/add.jst.ejs -->
 
-<h1><%= movie.escape("title") %></h1>
+<h1 class="addMovieTitle"><%= movie.escape("title") %></h1>
 <br>
 <% _(trailers).each (function (trailer, i) { %>
-  <div class="addMovieForm" data-trailer=<%= i %>> 
+  <div class="span9 addMovieForm" style="text-align:center" data-trailer=<%= i %>> 
     <iframe width="560" height="315" src="<%=trailer%>" frameborder="0" allowfullscreen></iframe>
     <br>
     <button class="save">Select Trailer</button>
