@@ -8,7 +8,6 @@ PM.Views.SearchMovieView = Backbone.View.extend ({
 
     var renderedContent = JST["movies/search"]({
     });
-
     that.$el.html(renderedContent);
 
     return that;
@@ -16,7 +15,7 @@ PM.Views.SearchMovieView = Backbone.View.extend ({
 
   search: function () {
     var that = this;
-    
+
     var movie_title = $('input').val();
 
     $.ajax({
@@ -28,14 +27,9 @@ PM.Views.SearchMovieView = Backbone.View.extend ({
       },
       dataType: "jsonp",
       success: function(response) {
-        // console.log(response.movies[1].title);
-        window.response = response;
-
         that.movieOptions = new PM.Collections.MovieOptions();
-        window.coll = that.movieOptions;
 
         _(response.movies).each (function (movie) {
-          // console.log(movie.abridged_cast[0].name);
           var cast = "";
           _(movie.abridged_cast).each (function (member) {
             cast = cast + ", " + member.name;
@@ -61,11 +55,9 @@ PM.Views.SearchMovieView = Backbone.View.extend ({
 
         $('.choices').remove();
         that.$el.append(movieChoiceView.render().$el);
-
-        //console.log(JSON.stringify(that.movieOptions));
       }
     });
-  }, 
+  },
 
   process: function (data) {
     console.log("made it");
