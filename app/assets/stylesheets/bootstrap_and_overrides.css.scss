@@ -2,6 +2,7 @@
 body { 
   padding-top: 60px; 
   background-color: black;
+  margin-bottom: 40px;
 }
 
 @import "bootstrap-responsive";
@@ -14,7 +15,3 @@ label {
   color: #666666;
 }
 
-.addMovieTrailer {
-  margin-left: auto;
-  margin-right: auto;
-}

@@ -1,8 +1,12 @@
 <!-- app/assets/templates/movies/list.jst.ejs -->
-
+<div class="banner">
+  <img src="assets/banner.png">
+</div>
+<div>
 <% movies.each(function (movie) { %>
   <div class="span3 movie" data-id="<%= movie.escape("id") %>">
     <a href="<%='#bar/' + movie.escape("id") %>"> <img src="<%= movie.escape("poster_url") %>" class="poster"> </a>
     <button class="delete">Delete</button>
   </div>
 <% }); %>
+</div>
