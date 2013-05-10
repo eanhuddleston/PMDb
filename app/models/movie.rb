@@ -4,4 +4,6 @@ class Movie < ActiveRecord::Base
 
   validates :audience_score, :title, :year, :poster_url, 
       :presence => true
+
+  belongs_to :user
 end

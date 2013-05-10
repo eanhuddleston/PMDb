@@ -1,8 +1,11 @@
 class MoviesController < ApplicationController
+  before_filter :authenticate_user!
+
   respond_to :json
 
   def create
     @movie = Movie.new(params[:movie])
+    @movie.user_id = current_user.id
 
     if @movie.save
       render :json => @movie
@@ -12,7 +15,7 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    @movies = current_user.movies
     respond_to do |format|
       format.html { render :index }
       format.json { render :json => @movies }

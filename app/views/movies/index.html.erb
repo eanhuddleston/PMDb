@@ -3,7 +3,7 @@
 
 <script type="text/javascript">
   $(function () {
-    var movies = <%= Movie.all.to_json.html_safe %>;
+    var movies = <%= @movies.to_json.html_safe %>;
 
     window.PM.initialize(
       $('#main'),
