@@ -4,7 +4,7 @@
 </div>
 <div>
 <% movies.each(function (movie) { %>
-  <div class="span3 movie" data-id="<%= movie.escape("id") %>">
+  <div class="movieContainer" data-id="<%= movie.escape("id") %>">
     <a href="<%='#bar/' + movie.escape("id") %>"> <img src="<%= movie.escape("poster_url") %>" class="poster"> </a>
     <button class="delete">Delete</button>
   </div>
