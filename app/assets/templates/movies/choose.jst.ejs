@@ -1,5 +1,7 @@
 <!-- app/assets/templates/movies/choose.jst.ejs -->
 
+<h2>Click to Choose:</h2>
+
 <% movies.each(function (movie) { %>
   <div class="span3" class="movie" data-id="<%= movie.escape("id") %>">
     <img src="<%= movie.escape("poster_url") %>" class="poster" data-cid="<%= movie.cid %>"> 
