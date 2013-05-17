@@ -132,3 +132,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.signIn {
+  float: left;
+}
+
+.signInDemoNotice {
+  color: #666666;
+  margin-left: 300px;
+  font-size: 20px;  
+}
