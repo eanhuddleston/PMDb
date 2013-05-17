@@ -55,7 +55,6 @@ PM.Routers.MoviesRouter = Backbone.Router.extend({
 
   showBar: function (id) {
     var that = this;
-    console.log(id);
     var okToSlide = true;
 
     $('.infobar').each(function(i, obj) {

@@ -15,3 +15,5 @@
 /tmp
 
 .DS_Store
+*.oo3
+/asset_creation

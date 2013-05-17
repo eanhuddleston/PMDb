@@ -1,6 +1,5 @@
 PM.Views.MoviesListView = Backbone.View.extend({
   events: {
-    "click ul.login_text": "loginModal",
     "click button.delete": "deleteMovie"
   },
 

@@ -19,6 +19,6 @@ PM.Views.InfobarView = Backbone.View.extend({
     console.log(barNum);
     $("#info-" + barNum).slideToggle();
 
-    Backbone.history.navigate("#barClosed");
+    Backbone.history.navigate("#barClosed", {replace: true});
   }
 });
