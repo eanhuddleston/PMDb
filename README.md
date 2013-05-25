@@ -1,13 +1,10 @@
-Personal Movie Database (PMDb)
-========
+##Personal Movie Database (PMDb)
 
-###[View demo on Heroku][pmdb-data]
-
-[pmdb-data]: http://sleepy-everglades-4649.herokuapp.com
-
-As the possible sources of movies has increased in recent years (e.g., Netflix, AppleTV, DVD, etc.), it can be hard to remember which services you have access to which movies on. This is a Rails/Backbone app for maintaining a personal movie database to keep track of how you can access the various movies you want to see.
+[View demo on Heroku](http://sleepy-everglades-4649.herokuapp.com)
 
 This project was implemented in 4 days, as a final project at App Academy.
+
+As the possible sources of movies has increased in recent years (e.g., Netflix, AppleTV, DVD, etc.), it can be hard to remember which services you have access to which movies on. This is a Rails/Backbone app for maintaining a personal movie database to keep track of how you can access the various movies you want to see.
 
 For movies you add to your database:
 
