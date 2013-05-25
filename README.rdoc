@@ -1,5 +1,22 @@
-== Personal Movie Database (PMDb)
+##[Personal Movie Database (PMDb)](http://sleepy-everglades-4649.herokuapp.com)
 
-A Rails/Backbone app that acts as a personal movie database, to keep track of how you can access the various movies you want to see (on Netflix, AppleTV, DVD, etc.).
+As the possible sources of movies has increased in recent years (e.g., Netflix, AppleTV, DVD, etc.), it can be hard to remember which services you have access to which movies on. This is a Rails/Backbone app for maintaining a personal movie database to keep track of how you can access the various movies you want to see.
 
+This project was implemented in 4 days, as a final project at App Academy.
 
+For movies you add to your database:
+
+- Movie information is obtained using RottenTomatoes API
+- A movie trailer is found using Youtube API
+- Clicking on a movie poster reveals a movie information bar
+
+Technology used in project:
+
+- Rails
+- Backbone.js
+- JavaScript, jQuery, jQueryUI
+- RottenTomatoes API
+- Youtube API
+- Devise
+- Twitter Bootstrap
+- CSS
