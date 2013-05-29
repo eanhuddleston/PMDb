@@ -1,6 +1,6 @@
 ##Personal Movie Database (PMDb)
 
-[View demo on Heroku](http://sleepy-everglades-4649.herokuapp.com)
+[View demo on Heroku](http://pmdbapp.herokuapp.com)
 
 This project was implemented in 4 days, as a final project at App Academy.
 
